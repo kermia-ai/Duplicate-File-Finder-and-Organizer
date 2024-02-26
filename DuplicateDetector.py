@@ -17,7 +17,6 @@ def hash_file(filepath):
             buf = file.read(65536)
     return hasher.hexdigest()
 
-
 def write_duplicates_to_excel(duplicates, file_path):
     wb = Workbook()
     ws = wb.active
@@ -32,11 +31,6 @@ def write_duplicates_to_excel(duplicates, file_path):
             ws.append([path, f"{file_size:.5f}", file_count, file_extension, modification_time])
 
     wb.save(file_path)
-
-
-
-
-
 
 def find_duplicates(start_dir):
     """Trouve et enregistre les fichiers en double dans le répertoire donné et ses sous-répertoires."""
